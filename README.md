@@ -77,7 +77,7 @@ LSI算法结果:
 
 ### 运行评估模块
 ```bash
-python part4_runner.py
+python evaluation_runner.py
 ```
 
 ### 支持的查询命令
