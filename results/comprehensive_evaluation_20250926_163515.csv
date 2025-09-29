@@ -1,0 +1,21 @@
+query_id,query_text,query_type,query_length,expected_category,set,LSI_Precision@5,LSI_Recall@5,LSI_nDCG@5,Language_Model_Precision@5,Language_Model_Recall@5,Language_Model_nDCG@5,Fusion_Precision@5,Fusion_Recall@5,Fusion_nDCG@5
+Q1,british athlete,specific_entity,2,sport,coursework,0.0,0.0,0.0,0.2,0.3333333333333333,0.2850703250369507,0.2,0.3333333333333333,0.2850703250369507
+Q2,machine learning artificial intelligence,conceptual,4,tech,coursework,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Q3,training performance,cross_domain,2,both,coursework,0.2,0.2,0.1729513136981354,0.0,0.0,0.0,0.0,0.0,0.0
+Q4,championship record,domain_specific,2,sport,coursework,0.2,0.3333333333333333,0.6300059872618923,0.2,0.3333333333333333,0.6300059872618923,0.2,0.3333333333333333,0.6300059872618923
+Q5,security system,technical_domain,2,tech,coursework,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+E1,athlete,entity_short,1,sport,extended,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+E2,technology,concept_short,1,tech,extended,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+E3,training,cross_short,1,both,extended,0.2,0.2,0.28207144342955975,0.2,0.2,0.22353633018007057,0.2,0.2,0.44707266036014115
+E4,sports training methods,domain_medium,3,sport,extended,0.2,0.3333333333333333,0.3212043018970804,0.0,0.0,0.0,0.2,0.3333333333333333,0.25454838678859487
+E5,artificial intelligence applications,concept_medium,3,tech,extended,0.0,0.0,0.0,0.2,0.3333333333333333,0.2437195847468319,0.0,0.0,0.0
+E6,performance analysis techniques,cross_medium,3,both,extended,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+E7,competitive sports performance optimization methods,domain_long,5,sport,extended,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+E8,advanced machine learning cybersecurity threat detection,technical_long,6,tech,extended,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+E9,sports technology,cross_combo,2,both,extended,0.2,0.16666666666666666,0.1968740777898919,0.0,0.0,0.0,0.2,0.16666666666666666,0.1968740777898919
+E10,athletic performance data,intersection,3,both,extended,0.2,0.2,0.07616128966473121,0.0,0.0,0.0,0.0,0.0,0.0
+E11,innovation,abstract,1,both,extended,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+E12,competition excellence,abstract_sport,2,sport,extended,0.2,0.3333333333333333,0.46927872602275644,0.0,0.0,0.0,0.2,0.3333333333333333,0.46927872602275644
+E13,system optimization,abstract_tech,2,tech,extended,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+E14,cybersecurity,technical_specific,1,tech,extended,0.0,0.0,0.0,0.2,0.5,0.10654373218155079,0.0,0.0,0.0
+E15,hurdler,sport_specific,1,sport,extended,0.0,0.0,0.0,0.2,0.3333333333333333,0.3631143808977028,0.2,0.3333333333333333,0.3127697035039474

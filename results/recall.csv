@@ -1,0 +1,6 @@
+Query_ID,Query_Text,Query_Type,Source_Document,LSI_Recall@5,Language_Model_Recall@5,BM25_Recall@5,Fusion_Recall@5
+Q1,going double athens,key_sentence_extract,sport_034.txt,0.2631578947368421,0.2631578947368421,0.2631578947368421,0.2631578947368421
+Q2,change history richards,key_sentence_extract,sport_040.txt,0.3333333333333333,0.6666666666666666,0.6666666666666666,0.6666666666666666
+Q3,iaaf decision nothing,key_sentence_extract,sport_033.txt,0.3333333333333333,0.3333333333333333,0.3333333333333333,0.3333333333333333
+Q4,laptop gadget,key_sentence_extract,tech_009.txt,0.6,1.0,1.0,0.8
+Q5,swiss army knife,key_sentence_extract,tech_009.txt,1.0,1.0,1.0,1.0
