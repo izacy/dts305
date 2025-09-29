@@ -147,7 +147,7 @@ python main_system.py
 ### 评估运行
 ```bash
 # 运行完整评估
-python part4_runner.py
+python evaluation_runner.py
 
 # 查看结果
 ls results/
