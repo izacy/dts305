@@ -162,8 +162,7 @@ class DocumentBasedQueryGenerator:
         Returns:
             list: List of generated queries with metadata
         """
-        print("📚 GENERATING QUERIES FROM DOCUMENT CONTENT")
-        print("=" * 60)
+        print("GENERATING QUERIES FROM DOCUMENT CONTENT")
         
         # Initialize IR system to load documents
         if not self.irs.initialize_system():
@@ -175,7 +174,7 @@ class DocumentBasedQueryGenerator:
         
         # Extract phrases from each document
         for i, (doc_name, doc_content) in enumerate(zip(self.irs.document_names, self.irs.documents)):
-            print(f"\n📄 Analyzing {doc_name}:")
+            print(f"\nAnalyzing {doc_name}:")
             
             # Extract key phrases
             phrases = self.extract_key_phrases_from_document(doc_content, doc_name, max_phrases=5)
@@ -214,8 +213,7 @@ class DocumentBasedQueryGenerator:
         Returns:
             dict: Relevance judgments for each query
         """
-        print(f"\n🎯 CREATING AUTOMATIC RELEVANCE JUDGMENTS")
-        print("-" * 50)
+        print(f"\nCREATING AUTOMATIC RELEVANCE JUDGMENTS")
         
         relevance_judgments = {}
         
@@ -289,8 +287,7 @@ class DocumentBasedQueryGenerator:
         Returns:
             list: Selected diverse queries
         """
-        print(f"\n🎲 SELECTING {target_count} DIVERSE QUERIES")
-        print("-" * 40)
+        print(f"\nSELECTING {target_count} DIVERSE QUERIES")
         
         # Group queries by characteristics
         by_category = defaultdict(list)
@@ -450,7 +447,7 @@ class DocumentBasedEvaluator:
         query_id = query_info['id']
         query_text = query_info['query']
         
-        print(f"\n🔍 Evaluating {query_id}: '{query_text}' (from {query_info['source_document']})")
+        print(f"\nEvaluating {query_id}: '{query_text}' (from {query_info['source_document']})")
         
         # Get results from all methods
         lsi_results = self.irs.information_retrieval_algorithm_1(query_text, top_k=5)
@@ -496,22 +493,12 @@ class DocumentBasedEvaluator:
     
     def run_document_based_evaluation(self):
         """Run complete document-based evaluation"""
-        print("📄 DOCUMENT-BASED QUERY EVALUATION")
-        print("DTS305TC Natural Language Processing - Part 4")
-        print("=" * 80)
-        
-        print("🎯 APPROACH:")
-        print("  • Generate queries directly from document content")
-        print("  • Automatic relevance judgments based on content analysis")
-        print("  • Ensures natural queries and realistic relevance")
-        print("  • Addresses generalizability concerns organically")
-        print()
-        
+
         # Generate queries from documents
         all_queries = self.query_generator.generate_document_based_queries()
         
         if len(all_queries) < 5:
-            print(f"⚠️  Only generated {len(all_queries)} queries. Need at least 5.")
+            print(f"Only generated {len(all_queries)} queries. Need at least 5.")
             return False
         
         # Select 5 diverse queries for coursework compliance
@@ -520,10 +507,6 @@ class DocumentBasedEvaluator:
         # Create automatic relevance judgments
         self.relevance_judgments = self.query_generator.create_automatic_relevance_judgments(self.selected_queries)
         
-        # Evaluate each query
-        print(f"\n" + "="*80)
-        print("PART 4.1-4.4: EVALUATION RESULTS")
-        print("="*80)
         
         evaluation_results = []
         
@@ -536,21 +519,18 @@ class DocumentBasedEvaluator:
         
         # Save results
         self.save_results(evaluation_results)
-        
-        print(f"\n✅ DOCUMENT-BASED EVALUATION COMPLETED!")
-        
+                
         return True
     
     def calculate_summary_statistics(self, results):
         """Calculate and display summary statistics"""
-        print(f"\n📈 SUMMARY STATISTICS")
+        print(f"\nSUMMARY STATISTICS")
         print("=" * 50)
         
         methods = ['LSI', 'Language_Model', 'Fusion']
         metrics = ['Precision@5', 'Recall@5', 'nDCG@5']
         
         print(f"{'Method':<15} {'Metric':<12} {'Mean':<8} {'Std':<8} {'Min':<8} {'Max':<8}")
-        print("-" * 70)
         
         for method in methods:
             for i, metric in enumerate(metrics):
@@ -568,7 +548,7 @@ class DocumentBasedEvaluator:
                 print()
         
         # Find best methods
-        print(f"\n🏆 BEST PERFORMING METHODS:")
+        print(f"\n BEST PERFORMING METHODS:")
         for metric in metrics:
             best_method = None
             best_score = -1
@@ -583,8 +563,7 @@ class DocumentBasedEvaluator:
     
     def save_results(self, results):
         """Save results to CSV files"""
-        print(f"\n💾 SAVING EVALUATION RESULTS")
-        print("-" * 30)
+        print(f"\nSAVING EVALUATION RESULTS")
         
         os.makedirs('results', exist_ok=True)
         
@@ -662,24 +641,15 @@ class DocumentBasedEvaluator:
             writer.writeheader()
             writer.writerows(relevance_data)
         
-        print(f"✅ Results saved:")
-        print(f"   • precision.csv")
-        print(f"   • recall.csv") 
-        print(f"   • nDCG.csv")
-        print(f"   • relevance_judgments.csv")
-
 
 def main():
     """Run document-based evaluation"""
     evaluator = DocumentBasedEvaluator()
     
     if evaluator.run_document_based_evaluation():
-        print(f"\n🎉 DOCUMENT-BASED EVALUATION COMPLETED!")
-        print(f"📊 Generated natural queries from actual document content")
-        print(f"📄 Automatic relevance judgments ensure realistic evaluation")
-        print(f"🎓 Coursework files ready in 'results/' directory")
+        print(f"\n DOCUMENT-BASED EVALUATION COMPLETED!")
     else:
-        print(f"\n❌ Evaluation failed!")
+        print(f"\n Evaluation failed!")
 
 
 if __name__ == "__main__":
